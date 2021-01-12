@@ -3,14 +3,33 @@
     flex-direction: column;
     width: 300px;
 }
-
+#catEditForm {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
 #catAddFormSave {
+    width: 50%;
+    margin: auto;
+    margin-top: 8px;
+}
+#catEditFormSave {
     width: 50%;
     margin: auto;
     margin-top: 8px;
 }
 
 .opr-sec-add-category-input {
+    border-radius: 5px;
+    padding: 4px 6px;
+    background-color: #3e3e3e;
+    border: 0px;
+    color: white;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.opr-sec-edit-category-input {
     border-radius: 5px;
     padding: 4px 6px;
     background-color: #3e3e3e;
@@ -30,6 +49,7 @@
     background-color: #3b3d27;
     color: #fff;
     padding: 4px 18px;
+    margin: 0px 8px;
 }
 
 
@@ -42,8 +62,23 @@
     min-height: 217px;
     border-radius: 3px;
 }
+.opr-sec-edit-category-cat-list {
+    margin-right: 2em;
+    min-width: 300px;
+    text-align: center;
+    background: #3e3e3e;
+    display: flex;
+    min-height: 217px;
+    border-radius: 3px;
+}
 
 #oprAddCatContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+}
+#oprEditCatContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -66,6 +101,11 @@
 }
 
 .opr-sec-add-category-category-container {
+    margin: 1px 8px;
+    border-radius: 5px;
+    background-color: #626262;
+}
+.opr-sec-edit-category-category-container {
     margin: 1px 8px;
     border-radius: 5px;
     background-color: #626262;
@@ -97,8 +137,22 @@
     border-radius: 50px;
     background-color: #595959;
 }
+.opr-sec-edit-category-line {
+    width: 50px;
+    height: 1px;
+    margin: 8px auto;
+    border-radius: 50px;
+    background-color: #595959;
+}
 
 .opr-sec-add-category-cat-actions {
+    text-align: right;
+    background-color: #4f4f4f;
+    border-radius: 0px 0px 5px 5px;
+    padding: 4px 8px;
+    display: flex;
+}
+.opr-sec-edit-category-cat-actions {
     text-align: right;
     background-color: #4f4f4f;
     border-radius: 0px 0px 5px 5px;
@@ -109,13 +163,27 @@
 .opr-sec-add-category-cat-body {
     padding-bottom: 8px;
 }
+.opr-sec-edit-category-cat-body {
+    padding-bottom: 8px;
+}
 
 .opr-sec-add-category-cat-name {
     font-weight: bold;
     font-size: large;
 }
+.opr-sec-edit-category-cat-name {
+    font-weight: bold;
+    font-size: large;
+}
 
 .opr-sec-add-category-no-categories-msg {
+    display: inline-table;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    color: white;
+}
+.opr-sec-edit-category-no-categories-msg {
     display: inline-table;
     text-align: center;
     width: 100%;

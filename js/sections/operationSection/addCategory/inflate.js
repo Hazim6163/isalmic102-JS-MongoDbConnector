@@ -236,8 +236,8 @@ function inflateCategory(data) {
                 html: '<i class="fas fa-pen-square cat-action-edit-icon"></i>',
                 id: idPre + 'CatActionEdit' + data._id
             }).click(() => {
-                //
-                console.log('need update: ' + data.name)
+                //navigate to the update category section : 
+                NaviController(3, data)
             })
         )//you can append another action right here 
     )

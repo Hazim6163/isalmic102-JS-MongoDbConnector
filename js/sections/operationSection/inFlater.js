@@ -1,3 +1,8 @@
+//pay loads array that will passed throw sections
+const naviPayLoad = {
+    category: {name: '', description: '', parent: ''}
+};
+
 $(document).ready(() => {
     //operations section 
     const OprSection = $('<div>', { class: 'operations-section', id: 'oprSection' });
@@ -71,7 +76,7 @@ function appendSectionNavigator() {
         id: 'oprSecAddCatBtn', text: 'تصنيف جديد'
     }).click(() => {
         NaviController(1);
-    }))
+    }).hide())
     navi.append($('<button>', {
         class: 'opr-sec-navi-add-idea customBtn',
         id: 'oprSecAddIdeaBtn', text: 'فكرة جديدة'
@@ -87,7 +92,7 @@ function appendSectionNavigator() {
     * 3: sectionKey need to set in the 1st Param 
     *   keys: 1= addCategory, 2= addIdea, 3= editCategory, 4= editIdea
  */
-function NaviController(sectionName, payLoad) {
+function NaviController(sectionKey, payLoad) {
     const addCategory = () => {
         $('#oprSecNaviTitle').text('تصنيف جديد')
         $('#oprAddCatContainer').show();
@@ -95,6 +100,17 @@ function NaviController(sectionName, payLoad) {
         $('#oprSecAddIdeaBtn').show();
         $('#oprAddIdeaContainer').hide();
         $('#oprEditCatContainer').hide();
+        $('#oprEditIdeaContainer').hide();
+    }
+    const editCategory = () => {
+        naviPayLoad.category =  payLoad;
+        updateEditCategoryFormValues(naviPayLoad.category)
+        $('#oprSecNaviTitle').text(payLoad.name)
+        $('#oprEditCatContainer').show();
+        $('#oprSecAddCatBtn').show();
+        $('#oprSecAddIdeaBtn').show();
+        $('#oprAddIdeaContainer').hide();
+        $('#oprAddCatContainer').hide();
         $('#oprEditIdeaContainer').hide();
     }
     const addIdea = () => {
@@ -116,6 +132,7 @@ function NaviController(sectionName, payLoad) {
             addIdea();
             break;
         case 3:
+            editCategory();
             break;
         case 4:
 

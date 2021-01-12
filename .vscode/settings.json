@@ -1,0 +1,14 @@
+{
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "latex",
+        "plaintext",
+        "markdown"
+    ],
+    "cSpell.words": [
+        "ajax",
+        "hygen"
+    ]
+}

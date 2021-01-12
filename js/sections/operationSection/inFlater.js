@@ -1,6 +1,6 @@
 $(document).ready(() => {
     //operations section 
-    const OprSection = $('<div>', { class: 'operations-section', id:'oprSection' });
+    const OprSection = $('<div>', { class: 'operations-section', id: 'oprSection' });
     $('#content').append(OprSection);
 
 
@@ -8,8 +8,9 @@ $(document).ready(() => {
     appendFirstLvlSections();
 })
 
-/**
- * first level sections : 
+/*
+--- first level sections : --- 
+ *
  *  add category
  *  add idea
  *  edit category 
@@ -18,7 +19,7 @@ $(document).ready(() => {
 function appendFirstLvlSections() {
     const OprSection = $('#oprSection')
     // section body : 
-    const sectionBody = $('<div>', {class: 'opr-sec-body', id: 'OprSecBody'})
+    const sectionBody = $('<div>', { class: 'opr-sec-body', id: 'OprSecBody' })
     OprSection.append(sectionBody)
 
     //add category 
@@ -41,8 +42,8 @@ function appendFirstLvlSections() {
         $('<div>', { class: 'opr-sec-add-category', id: 'oprEditIdeaContainer', text: 'Edit Idea Section' }).hide()
     )
 
-    
-    
+
+
 }
 
 /**
@@ -50,7 +51,7 @@ function appendFirstLvlSections() {
  */
 function appendSectionNavigator() {
     const oprSection = $('#oprSection');
-    const navi = $('<div>', {class: 'opr-sec-navi'});
+    const navi = $('<div>', { class: 'opr-sec-navi' });
     oprSection.append(navi)
 
     navi.append($('<h2>', {
@@ -69,6 +70,25 @@ function appendSectionNavigator() {
         class: 'opr-sec-navi-add-cat customBtn',
         id: 'oprSecAddCatBtn', text: 'تصنيف جديد'
     }).click(() => {
+        NaviController(1);
+    }))
+    navi.append($('<button>', {
+        class: 'opr-sec-navi-add-idea customBtn',
+        id: 'oprSecAddIdeaBtn', text: 'فكرة جديدة'
+    }).click(() => {
+        NaviController(2)
+    }))
+}
+
+/**
+ Navigation Controller : 
+    * 1: send the requested section in the params to navigate to .
+    * 2: if the section need data you can pass it throw the 2nd parameter payLoad
+    * 3: sectionKey need to set in the 1st Param 
+    *   keys: 1= addCategory, 2= addIdea, 3= editCategory, 4= editIdea
+ */
+function NaviController(sectionName, payLoad) {
+    const addCategory = () => {
         $('#oprSecNaviTitle').text('تصنيف جديد')
         $('#oprAddCatContainer').show();
         $('#oprSecAddCatBtn').hide();
@@ -76,20 +96,32 @@ function appendSectionNavigator() {
         $('#oprAddIdeaContainer').hide();
         $('#oprEditCatContainer').hide();
         $('#oprEditIdeaContainer').hide();
-
-    }).hide())
-    navi.append($('<button>', {
-        class: 'opr-sec-navi-add-idea customBtn',
-        id: 'oprSecAddIdeaBtn', text: 'فكرة جديدة'
-    }).click(() => {
+    }
+    const addIdea = () => {
         $('#oprSecNaviTitle').text('فكرة جديدة')
         $('#oprAddIdeaContainer').show();
-        
+
         $('#oprSecAddCatBtn').show();
         $('#oprSecAddIdeaBtn').hide();
 
         $('#oprAddCatContainer').hide();
         $('#oprEditCatContainer').hide();
         $('#oprEditIdeaContainer').hide();
-    }))
+    }
+    switch (sectionKey) {
+        case 1:
+            addCategory()
+            break;
+        case 2:
+            addIdea();
+            break;
+        case 3:
+            break;
+        case 4:
+
+            break;
+        default:
+            console.error('requested section is unavailable.')
+            break;
+    }
 }

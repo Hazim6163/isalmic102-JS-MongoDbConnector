@@ -13,7 +13,7 @@ setInterval(() => {
         // site for the categories in the APP . 
         // 1. add category section in the operations section we have populate function there so lets call it right here  : 
         rePopulateCatList();
-        
+        rePopulateEditCatList();
     });
     isCategories = true;
 }, 500)
@@ -42,6 +42,16 @@ async function DELETE_CATEGORY_API_BY_ID(data) {
     //isCategories = false;
     return result
 }
+
+//edit category request: 
+// async request : 
+async function EDIT_CATEGORY_API(data){
+    const result = await EDIT_CATEGORY_APIAsync(data);
+    return result
+}
+
+
+
 
 
 
@@ -97,5 +107,20 @@ function DELETE_CATEGORY_API_BY_IDAsync(id) {
         }
         //send ajax : 
         $.ajax({ method, contentType, url, success, dataType })
+    });
+}
+
+
+const EDIT_CATEGORY_APIAsync = (data) => {
+    return new Promise(resolve => {
+        const method = 'POST'; // HTTP Request Type
+        const url = urls.apiBase + urls.category.edit; // url
+        const contentType = 'application/json'; //content type
+        const dataType = 'JSON' //response Data
+        const success = (result) => {
+            resolve(result)
+        }
+        //send ajax : 
+        $.ajax({ method,  contentType, url, data, success, dataType })
     });
 }

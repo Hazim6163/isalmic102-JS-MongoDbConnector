@@ -205,6 +205,10 @@ function inflateEditCategory(data) {
     })
     container.append(catBody);
 
+    //line before name  
+    catBody.append($('<div>', {
+        class: classPre + 'line'
+    }))
     //create category name : 
     catBody.append($('<div>', {
         class: classPre + 'cat-name',

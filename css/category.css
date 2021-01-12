@@ -25,23 +25,23 @@
 .opr-sec-add-category-input {
     border-radius: 5px;
     padding: 4px 6px;
-    background-color: #3e3e3e;
     border: 0px;
     color: white;
     font-size: large;
     text-align: center;
     margin-bottom: 8px;
+    background-color: #242424;
 }
 
 .opr-sec-edit-category-input {
     border-radius: 5px;
     padding: 4px 6px;
-    background-color: #3e3e3e;
     border: 0px;
     color: white;
     font-size: large;
     text-align: center;
     margin-bottom: 8px;
+    background-color: #242424;
 }
 
 .customBtn {
@@ -67,20 +67,16 @@
     margin-right: 2em;
     min-width: 300px;
     text-align: center;
-    background: #3e3e3e;
-    display: flex;
     min-height: 217px;
-    border-radius: 3px;
+    padding-bottom: 16px !important;
 }
 
 .opr-sec-edit-category-cat-list {
     margin-right: 2em;
     min-width: 300px;
     text-align: center;
-    background: #3e3e3e;
-    display: flex;
     min-height: 217px;
-    border-radius: 3px;
+    padding-bottom: 16px !important;
 }
 
 #oprAddCatContainer {
@@ -102,7 +98,7 @@
     max-width: 300px;
     max-height: 300px;
     overflow: auto;
-    padding: 12px 2px;
+    padding: 0px;
 }
 
 #catListSpinner {
@@ -113,20 +109,22 @@
 }
 
 .opr-sec-add-category-category-container {
-    margin: 1px 8px;
     border-radius: 5px;
-    background-color: #626262;
+    background-color: #242424;
+    margin-right: 2em;
+    margin: 0px 0px 0px 16px;
 }
 
 .opr-sec-edit-category-category-container {
-    margin: 1px 8px;
     border-radius: 5px;
-    background-color: #626262;
+    background-color: #242424;
+    margin-right: 2em;
+    margin: 0px 0px 0px 16px;
 }
 
 .cat-action-delete-icon {
     color: #7e7259;
-    background-color: #3e3e3e;
+    background-color: #242424;
     cursor: pointer;
     padding: 3px;
     border-radius: 4px;
@@ -135,7 +133,7 @@
 
 .cat-action-edit-icon {
     color: #7e7259;
-    background-color: #3e3e3e;
+    background-color: #242424;
     cursor: pointer;
     padding: 3px;
     border-radius: 4px;
@@ -145,42 +143,44 @@
 
 .opr-sec-add-category-line {
     width: 50px;
-    height: 1px;
-    margin: 8px auto;
-    border-radius: 50px;
-    background-color: #595959;
+    height: 2px;
+    margin: auto;
+    border-radius: 253px;
+    background-color: #323232;
 }
 
 .opr-sec-edit-category-line {
     width: 50px;
-    height: 1px;
-    margin: 8px auto;
-    border-radius: 50px;
-    background-color: #595959;
+    height: 2px;
+    margin: auto;
+    border-radius: 253px;
+    background-color: #323232;
 }
 
 .opr-sec-add-category-cat-actions {
     text-align: right;
-    background-color: #4f4f4f;
     border-radius: 0px 0px 5px 5px;
     padding: 4px 8px;
     display: flex;
+    background-color: #1c1c1c;
 }
 
 .opr-sec-edit-category-cat-actions {
     text-align: right;
-    background-color: #4f4f4f;
     border-radius: 0px 0px 5px 5px;
     padding: 4px 8px;
     display: flex;
+    background-color: #1c1c1c;
 }
 
 .opr-sec-add-category-cat-body {
     padding-bottom: 8px;
+    cursor: pointer;
 }
 
 .opr-sec-edit-category-cat-body {
     padding-bottom: 8px;
+    cursor: pointer;
 }
 
 .opr-sec-add-category-cat-name {

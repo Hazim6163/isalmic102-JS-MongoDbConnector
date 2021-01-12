@@ -44,7 +44,7 @@ $(document).ready(() => {
     section.html('');
     //create add idea form: 
     createAddIdeaForm(section);
-    createCategoryListAddIdeaFrom(section)
+    createCategoryList(section, 'ideaAddForm', 'opr-sec-add-idea-');
 })
 
 // create form to edit category . 
@@ -64,16 +64,16 @@ function createAddIdeaForm(section) {
         'placeHolder': 'الاسم'
     }))
     // description input
-    form.append($('<textarea>', {
-        class: classPre + 'input addIdeaDes input',
+    form.append($('<div>', {
+        class: 'addIdeaDes input',
         id: idPre + 'Des'
     }).attr({
         'type': 'text',
-        'placeHolder': 'الوصف'
-    }))
+        'contenteditable': ''
+    }).text('الوصف'))
     // source input
     form.append($('<input>', {
-        class: classPre + 'input addIdeaSource input',
+        class: 'addIdeaSrc input',
         id: idPre + 'Source'
     }).attr({
         'type': 'text',
@@ -95,10 +95,33 @@ function createAddIdeaForm(section) {
         class: classPre + 'save customBtn',
         id: idPre + 'Save'
     }).text('حفظ').click(() => {
-        handleSaveAddIdeaClick();
+        handleSaveAddIdeaClick(idPre);
     }))
 
 
     section.append(form)
 
+}
+
+function handleSaveAddIdeaClick(idPre) {
+    //get idea data : 
+    const ideaName = $('#' + idPre + 'Name').val()
+    const ideaDes = $('#' + idPre + 'Des').text()
+    const ideaSrc = $('#' + idPre + 'Source').val()
+    const ideaParent = $('#' + idPre + 'Parent').val()
+
+    let d = {
+        name: ideaName,
+        description: ideaDes,
+        source: ideaSrc,
+        parent: ideaParent,
+    }
+    d = JSON.stringify(d);
+
+    ADD_NEW_IDEA(d).then((e) => {
+        console.log(e)
+        isIdeas = false;
+    });
+
+    console.log(d)
 }

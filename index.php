@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.rtl.min.css" integrity="sha384-mUkCBeyHPdg0tqB6JDd+65Gpw5h/l8DKcCTV2D2UpaMMFd7Jo8A+mDAosaWgFBPl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/idea.css">
 
     <title>Islamic 101</title>
 </head>
@@ -49,6 +50,7 @@
     <script src="./js/utils/urls.js"></script>
     <script src="./js/models/user/auth/auth.js"></script>
     <script src="./js/models/category/api.js"></script>
+    <script src="./js/models/idea/api.js"></script>
     <script src="./js/sections/operationSection/inflater.js"></script>
     <script src="./js/sections/operationSection/addCategory/inflate.js"></script>
     <script src="./js/sections/operationSection/addIdea/inflate.js"></script>

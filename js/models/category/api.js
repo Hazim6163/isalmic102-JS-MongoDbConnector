@@ -12,7 +12,8 @@ setInterval(() => {
         //re populate all the categories in the site :
         // site for the categories in the APP . 
         // 1. add category section in the operations section we have populate function there so lets call it right here  : 
-        rePopulateCatList();
+        rePopulateCatList('opr-sec-add-category-', 'catAddForm');
+        rePopulateCatList('opr-sec-add-idea-', 'ideaAddForm');
         rePopulateEditCatList();
     });
     isCategories = true;
@@ -45,7 +46,7 @@ async function DELETE_CATEGORY_API_BY_ID(data) {
 
 //edit category request: 
 // async request : 
-async function EDIT_CATEGORY_API(data){
+async function EDIT_CATEGORY_API(data) {
     const result = await EDIT_CATEGORY_APIAsync(data);
     return result
 }
@@ -121,6 +122,6 @@ const EDIT_CATEGORY_APIAsync = (data) => {
             resolve(result)
         }
         //send ajax : 
-        $.ajax({ method,  contentType, url, data, success, dataType })
+        $.ajax({ method, contentType, url, data, success, dataType })
     });
 }

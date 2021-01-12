@@ -8,12 +8,13 @@ let isIdeas = false;
 setInterval(() => {
     if (isIdeas) return;
     console.warn('listen to ideas list changes on: isIdeas = ' + false)
-    ideas = API_ALL_IDEAS().then(() => {
+    ideas = API_ALL_IDEAS().then((d) => {
         //re populate all the ideas in the site :
         // site for the ideas in the APP . 
         // 1. add idea section in the operations section we have populate function there so lets call it right here  : 
-        rePopulateIdeaList();
-        rePopulateEditIdeaList();
+        //rePopulateIdeaList(); //TODO
+        //rePopulateEditIdeaList();
+        console.log(d)
     });
     isIdeas = true;
 }, 500)

@@ -45,7 +45,9 @@ $(document).ready(() => {
     // 2. categories list section . 
 
     createForm(section);
-    createCategoryList(section);
+    const idPre = 'catAddForm';
+    const classPre = 'opr-sec-add-category-';
+    createCategoryList(section, idPre, classPre);
 
 })
 
@@ -125,10 +127,7 @@ function handleSaveCatClick() {
 }
 
 // category list in the form 
-function createCategoryList(section) {
-    //class name prefix : opr-sec-add-category-
-    const classPre = 'opr-sec-add-category-';
-    const idPre = 'catAddForm'
+function createCategoryList(section, idPre, classPre) {
     //create categories list 
     section.append($('<div>', {
         class: classPre + 'cat-list ',
@@ -136,18 +135,15 @@ function createCategoryList(section) {
     })
     );
     //init spinner : 
-    initCatListSpinner();
+    initCatListSpinner(idPre, classPre);
 }
 
 //categories list spinner : 
-function initCatListSpinner() {
-    //class name prefix : opr-sec-add-category-
-    const classPre = 'opr-sec-add-category-';
-    const idPre = 'catAddForm'
+function initCatListSpinner(idPre, classPre) {
     // init spinner : 
     const list = $('#' + idPre + 'CatList');
     //clean the list content 
-    cleanCategoriesList();
+    cleanCategoriesList(idPre);
     //append spinner 
     list.append($('<div>', {
         class: 'cat-list-spinner spinner ',
@@ -156,13 +152,10 @@ function initCatListSpinner() {
 }
 
 //populate category list : 
-function rePopulateCatList() {
-    //class name prefix : opr-sec-add-category-
-    const classPre = 'opr-sec-add-category-';
-    const idPre = 'catAddForm'
+function rePopulateCatList(classPre, idPre) {
     //get list container . 
     const list = $('#' + idPre + 'CatList');
-    cleanCategoriesList()
+    cleanCategoriesList(idPre)
     //check if there is categories : 
     if (categories.length <= 0) {
         list.append(
@@ -178,16 +171,13 @@ function rePopulateCatList() {
     //loop throw each category 
     categories.reverse()
     categories.forEach(c => {
-        list.append(inflateCategory(c));
+        list.append(inflateCategory(c, idPre, classPre));
     });
     categories.reverse();
 }
 
 // inflate category obj in the categories list : 
-function inflateCategory(data) {
-    //class name prefix : opr-sec-add-category-
-    const classPre = 'opr-sec-add-category-';
-    const idPre = 'catAddForm'
+function inflateCategory(data, idPre, classPre) {
     //create category container : 
     const container = $('<div>', {
         class: classPre + 'category-container',
@@ -237,7 +227,7 @@ function inflateCategory(data) {
                     isCategories = false;
                 });
                 //init spinner: 
-                initCatListSpinner();
+                initCatListSpinner(idPre, classPre);
             })
         ).append(
             $('<div>', {
@@ -255,8 +245,7 @@ function inflateCategory(data) {
 
 }
 
-function cleanCategoriesList() {
-    const idPre = 'catAddForm'
+function cleanCategoriesList(idPre) {
     const list = $('#' + idPre + 'CatList');
     list.removeClass('list-populated');
     list.empty()

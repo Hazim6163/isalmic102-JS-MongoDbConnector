@@ -1,6 +1,7 @@
 //TODO change
 const urls = {
-    apiBase: 'https://islamic-server-101.herokuapp.com',
+    //apiBase: 'https://islamic-server-101.herokuapp.com',
+    apiBase: 'http://localhost:3000',
     user: {
         register: { path: '/user/api/register', method: 'POST' },
         login: { path: '/user/api/login', method: 'POST' },
@@ -14,6 +15,13 @@ const urls = {
         all: { path: '/category/api/all', method: 'get' },
         delete: { path: '/category/api/delete', method: 'get' },
         id: { path: '/category/api/id', method: 'get' },
+    },
+    idea: {
+        add: { path: '/idea/api/add', method: 'POST' },
+        edit: { path: '/idea/api/edit', method: 'POST' },
+        all: { path: '/idea/api/all', method: 'get' },
+        delete: { path: '/idea/api/delete', method: 'get' },
+        id: { path: '/idea/api/id', method: 'get' },
     }
 
 }

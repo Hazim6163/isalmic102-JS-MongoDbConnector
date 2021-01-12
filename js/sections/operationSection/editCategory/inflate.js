@@ -67,8 +67,9 @@ function createEditCategoryForm(section) {
     }).attr({
         'type': 'text',
         'placeHolder': 'الوصف'
-    }).val(naviPayLoad.category.description)) 
+    }).val(naviPayLoad.category.description))
     //parent input : 
+    form.append($('<span>', { text: ' اختار تصنيف من القائمة', class: 'subText' }))
     form.append($('<input>', {
         class: classPre + 'input EditCatParent',
         id: idPre + 'Parent'
@@ -76,7 +77,7 @@ function createEditCategoryForm(section) {
         'type': 'text',
         'placeHolder': 'الاصل',
         'readonly': ''
-    }).val(naviPayLoad.category.parent)) 
+    }).val(naviPayLoad.category.parent))
     //save btn : 
     form.append($('<button>', {
         class: classPre + 'save customBtn',

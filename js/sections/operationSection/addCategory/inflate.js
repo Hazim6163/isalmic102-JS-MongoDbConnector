@@ -1,5 +1,4 @@
 let categories;
-let catParent;
 
 /** 
  >>>>>>>>>>><<<<<<<<<<< blue print of this file >>>>>>>>>>><<<<<<<<<
@@ -75,13 +74,15 @@ function createForm(section) {
         'placeHolder': 'الوصف'
     }))
     //parent input : 
+    form.append($('<span>', { text: ' اختار تصنيف من القائمة', class: 'subText' }))
     form.append($('<input>', {
         class: classPre + 'input addCatParent',
         id: idPre + 'Parent'
     }).attr({
         'type': 'text',
-        'placeHolder': 'الاصل'
-    }).hide())
+        'placeHolder': 'الاصل',
+        'readonly': ''
+    }))
     //save btn : 
     form.append($('<button>', {
         class: classPre + 'save customBtn',
@@ -101,9 +102,11 @@ function handleSaveCatClick() {
     const idPre = 'catAddForm';
     // get name input val
     const catName = $('#' + idPre + 'Name').val()
-    // get des inptu val 
+    // get des input val 
     const catDes = $('#' + idPre + 'Des').val()
-    //get category data
+    //get parent input val
+    const catParent = $('#' + idPre + 'Parent').val()
+    //set category data to send
     let d = {
         name: catName, description: catDes, parent: catParent
     }
@@ -189,6 +192,12 @@ function inflateCategory(data) {
     const container = $('<div>', {
         class: classPre + 'category-container',
         id: data._id
+    }).click(() => {
+        //set category name to the parent input.
+        //check if the category name is already in to remove . data.name
+        const parent = $('#' + idPre + 'Parent')
+        if (parent.val() === data.name) parent.val('');
+        else parent.val(data.name)
     })
 
     //create category body : 

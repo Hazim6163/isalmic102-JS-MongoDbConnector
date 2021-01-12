@@ -1,5 +1,41 @@
 let categories;
 let catParent;
+
+/** 
+ >>>>>>>>>>><<<<<<<<<<< blue print of this file >>>>>>>>>>><<<<<<<<<
+ * 
+ * 
+ * functions : 
+ * 
+ *  on document ready : 
+    * 1: select the add category section 
+    * 2: clean the section
+    * 3: createForm
+    * 4: create category list
+ * 
+ *  createForm : 
+    * 1:to create add category section form . 
+ * 
+ *  handleSaveCatClick : 
+    * 1: when the save btn in the form clicked .
+ *  
+ *  createCategoryList : 
+    * 1: to create the categories list 
+ * 
+ *  initCatListSpinner: 
+    * 1: to init the spinner when loading or remove the categories 
+ * 
+ *  repopulateList : 
+    *  1: to clean the list container and populate it again from the data source var = categories .
+ * 
+ *  inflateCategory : 
+    * 1: to inflate category in the list .
+ * 
+ *  cleanCategoryList : 
+    * 2: to clean the categories list
+ * 
+ */
+
 $(document).ready(() => {
     const section = $('#oprAddCatContainer');
     //clean up the add category container . 

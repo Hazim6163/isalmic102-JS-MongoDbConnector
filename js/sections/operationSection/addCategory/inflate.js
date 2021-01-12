@@ -192,17 +192,17 @@ function inflateCategory(data) {
     const container = $('<div>', {
         class: classPre + 'category-container',
         id: data._id
+    })
+
+    //create category body : 
+    const catBody = $('<div>', {
+        class: classPre + 'cat-body'
     }).click(() => {
         //set category name to the parent input.
         //check if the category name is already in to remove . data.name
         const parent = $('#' + idPre + 'Parent')
         if (parent.val() === data.name) parent.val('');
         else parent.val(data.name)
-    })
-
-    //create category body : 
-    const catBody = $('<div>', {
-        class: classPre + 'cat-body'
     })
     container.append(catBody);
 

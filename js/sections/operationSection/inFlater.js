@@ -1,6 +1,6 @@
 //pay loads array that will passed throw sections
 const naviPayLoad = {
-    category: {name: '', description: '', parent: ''}
+    category: { name: '', description: '', parent: '' }
 };
 
 $(document).ready(() => {
@@ -103,7 +103,7 @@ function NaviController(sectionKey, payLoad) {
         $('#oprEditIdeaContainer').hide();
     }
     const editCategory = () => {
-        naviPayLoad.category =  payLoad;
+        naviPayLoad.category = payLoad;
         updateEditCategoryFormValues(naviPayLoad.category)
         $('#oprSecNaviTitle').text(payLoad.name)
         $('#oprEditCatContainer').show();

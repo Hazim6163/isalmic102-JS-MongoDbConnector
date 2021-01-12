@@ -102,7 +102,7 @@
     max-width: 300px;
     max-height: 300px;
     overflow: auto;
-    padding: 2px;
+    padding: 12px 2px;
 }
 
 #catListSpinner {
@@ -186,11 +186,13 @@
 .opr-sec-add-category-cat-name {
     font-weight: bold;
     font-size: large;
+    padding-top: 8px;
 }
 
 .opr-sec-edit-category-cat-name {
     font-weight: bold;
     font-size: large;
+    padding-top: 8px;
 }
 
 .opr-sec-add-category-no-categories-msg {

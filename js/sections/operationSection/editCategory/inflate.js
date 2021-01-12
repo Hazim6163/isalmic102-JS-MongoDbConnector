@@ -87,7 +87,7 @@ function createEditCategoryForm(section) {
         class: classPre + 'save customBtn',
         id: idPre + 'Save'
     }).text('حفظ').click(() => {
-        handleSaveEditCatClick();
+        handleSaveEditCatClick(naviPayLoad.category._id);
     }))
 
 
@@ -247,5 +247,34 @@ function inflateEditCategory(data) {
     )
 
     return container;
+
+}
+
+// handle save edited category click
+function handleSaveEditCatClick(id) {
+    //set id prefix
+    const idPre = 'catEditForm';
+    // get name input val
+    const catName = $('#' + idPre + 'Name').val()
+    // get des input val 
+    const catDes = $('#' + idPre + 'Des').val()
+    //get parent input val
+    const catParent = $('#' + idPre + 'Parent').val()
+    //set category data to send
+    let d = {
+        name: catName, description: catDes, parent: catParent, id
+    }
+    //convert to json
+    d = JSON.stringify(d);
+    //send add category request . 
+    EDIT_CATEGORY_API(d).then(() => {
+        isCategories = false;
+    });
+    //clean up the form
+    $('#' + idPre + 'Name').val('')
+    $('#' + idPre + 'Des').val('')
+    $('#' + idPre + 'Parent').val('')
+    //init spinner : 
+    initEditCatListSpinner();
 
 }

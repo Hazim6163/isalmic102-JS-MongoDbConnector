@@ -114,7 +114,7 @@ function DELETE_CATEGORY_API_BY_IDAsync(id) {
 const EDIT_CATEGORY_APIAsync = (data) => {
     return new Promise(resolve => {
         const method = 'POST'; // HTTP Request Type
-        const url = urls.apiBase + urls.category.edit; // url
+        const url = urls.apiBase + urls.category.edit.path; // url
         const contentType = 'application/json'; //content type
         const dataType = 'JSON' //response Data
         const success = (result) => {

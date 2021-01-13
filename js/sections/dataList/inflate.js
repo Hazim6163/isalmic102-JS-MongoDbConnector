@@ -98,7 +98,6 @@ function createReichCat(data, idPre, classPre, appendTo) {
     appendIdeasToBody(ideasList, data.ideas, 'DataList', 'data-list');
 
     //check if the category has nested cats : 
-    console.log('cats count: ' + data.catsCount)
     if (data.catsCount > 0) {
         //loop throw each nested cat: 
         data.cats.forEach((c1) => {
@@ -172,7 +171,7 @@ function inflateIdeaDataList(data, idPre, classPre, index) {
                 id: idPre + 'CatActionEdit' + data._id
             }).click(() => {
                 //navigate to the update category section : 
-                NaviController(3, data)
+                NaviController(4, data)
             })
         )//you can append another action right here 
     )

@@ -43,16 +43,15 @@ $(document).ready(() => {
     //clean up the container: 
     section.html('');
     //create add idea form: 
-    createAddIdeaForm(section);
+    const classPre = 'opr-sec-add-idea-';
+    //id name prefix : ideaAddForm
+    const idPre = 'ideaAddForm'
+    createAddIdeaForm(section, classPre, idPre);
     createCategoryList(section, 'ideaAddForm', 'opr-sec-add-idea-');
 })
 
 // create form to edit category . 
-function createAddIdeaForm(section) {
-    //class name prefix : opr-sec-add-idea-
-    const classPre = 'opr-sec-add-idea-';
-    //id name prefix : ideaAddForm
-    const idPre = 'ideaAddForm'
+function createAddIdeaForm(section, classPre, idPre) {
     //create form container . 
     const form = $('<div>', { class: classPre + 'form-container', id: idPre });
     // name input ; 
@@ -95,7 +94,9 @@ function createAddIdeaForm(section) {
         class: classPre + 'save customBtn',
         id: idPre + 'Save'
     }).text('حفظ').click(() => {
-        handleSaveAddIdeaClick(idPre);
+        //check if edit or add new request .: 
+        if (idPre == 'ideaAddForm') handleSaveAddIdeaClick(idPre);
+        if (idPre == 'ideaEditForm') handleSaveEditIdeaClick(idPre);
     }))
 
 
@@ -118,10 +119,5 @@ function handleSaveAddIdeaClick(idPre) {
     }
     d = JSON.stringify(d);
 
-    ADD_NEW_IDEA(d).then((e) => {
-        console.log(e)
-        isIdeas = false;
-    });
-
-    console.log(d)
+    ADD_NEW_IDEA(d);
 }

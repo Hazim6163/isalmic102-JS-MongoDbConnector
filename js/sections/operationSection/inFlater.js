@@ -1,6 +1,7 @@
 //pay loads array that will passed throw sections
 const naviPayLoad = {
-    category: { name: '', description: '', parent: '' }
+    category: { name: '', description: '', parent: '' },
+    idea: { name: '', description: '', source: '', parent: '' }
 };
 
 $(document).ready(() => {
@@ -155,6 +156,19 @@ function NaviController(sectionKey, payLoad) {
         $('#oprEditCatContainer').hide();
         $('#oprEditIdeaContainer').hide();
     }
+    const editIdea = () => {
+        naviPayLoad.idea = payLoad;
+        updateEditIdeaFormValues(naviPayLoad.idea)
+        $('#oprSecNaviTitle').text(payLoad.name)
+        $('#oprEditIdeaContainer').show();
+        $('#oprSecAddCatBtn').show();
+        $('#oprSecAddIdeaBtn').show();
+        $('#oprSecBrowseBtn').show();
+        $('#oprAddIdeaContainer').hide();
+        $('#oprAddCatContainer').hide();
+        $('#oprBrowseContainer').hide();
+        $('#oprEditCatContainer').hide();
+    }
     switch (sectionKey) {
         case 1:
             addCategory()
@@ -166,7 +180,7 @@ function NaviController(sectionKey, payLoad) {
             editCategory();
             break;
         case 4:
-
+            editIdea();
             break;
         case 5:
             browseData()

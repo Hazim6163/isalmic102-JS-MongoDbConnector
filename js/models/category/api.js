@@ -15,6 +15,7 @@ setInterval(() => {
         // 1. add category section in the operations section we have populate function there so lets call it right here  : 
         rePopulateCatList('opr-sec-add-category-', 'catAddForm');
         rePopulateCatList('opr-sec-add-idea-', 'ideaAddForm');
+        rePopulateCatList('opr-sec-edit-idea-', 'ideaEditForm')
         rePopulateEditCatList();
     });
     isCategories = true;

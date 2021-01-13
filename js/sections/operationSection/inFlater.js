@@ -29,7 +29,7 @@ function appendFirstLvlSections() {
 
     //add category 
     sectionBody.append(
-        $('<div>', { class: 'opr-sec-add-category', id: 'oprAddCatContainer', text: 'add Category Section' })
+        $('<div>', { class: 'opr-sec-add-category', id: 'oprAddCatContainer', text: 'add Category Section' }).hide()
     )
 
     //add idea
@@ -47,6 +47,11 @@ function appendFirstLvlSections() {
         $('<div>', { class: 'opr-sec-add-category', id: 'oprEditIdeaContainer', text: 'Edit Idea Section' }).hide()
     )
 
+    //Browse ideas
+    sectionBody.append(
+        $('<div>', { class: 'opr-sec-browse-ideas', id: 'oprBrowseContainer', text: 'Browser' }).show()
+    )
+
 
 
 }
@@ -62,7 +67,7 @@ function appendSectionNavigator() {
     navi.append($('<h2>', {
         class: 'opr-sec-navi-title',
         id: 'oprSecNaviTitle',
-        text: 'تصنيف جديد'
+        text: 'الأفكار'
     }).css({
         'text-align': 'center',
         'margin': '30px 16px'
@@ -76,13 +81,19 @@ function appendSectionNavigator() {
         id: 'oprSecAddCatBtn', text: 'تصنيف جديد'
     }).click(() => {
         NaviController(1);
-    }).hide())
+    }).show())
     navi.append($('<button>', {
         class: 'opr-sec-navi-add-idea customBtn',
         id: 'oprSecAddIdeaBtn', text: 'فكرة جديدة'
     }).click(() => {
         NaviController(2)
     }))
+    navi.append($('<button>', {
+        class: 'opr-sec-navi-browse-data customBtn',
+        id: 'oprSecBrowseBtn', text: 'تصفح الأفكار'
+    }).click(() => {
+        NaviController(5)
+    }).hide())
 }
 
 /**
@@ -98,8 +109,10 @@ function NaviController(sectionKey, payLoad) {
         $('#oprAddCatContainer').show();
         $('#oprSecAddCatBtn').hide();
         $('#oprSecAddIdeaBtn').show();
+        $('#oprSecBrowseBtn').show();
         $('#oprAddIdeaContainer').hide();
         $('#oprEditCatContainer').hide();
+        $('#oprBrowseContainer').hide();
         $('#oprEditIdeaContainer').hide();
     }
     const editCategory = () => {
@@ -109,18 +122,36 @@ function NaviController(sectionKey, payLoad) {
         $('#oprEditCatContainer').show();
         $('#oprSecAddCatBtn').show();
         $('#oprSecAddIdeaBtn').show();
+        $('#oprSecBrowseBtn').show();
         $('#oprAddIdeaContainer').hide();
         $('#oprAddCatContainer').hide();
+        $('#oprBrowseContainer').hide();
         $('#oprEditIdeaContainer').hide();
     }
     const addIdea = () => {
         $('#oprSecNaviTitle').text('فكرة جديدة')
-        $('#oprAddIdeaContainer').show();
 
-        $('#oprSecAddCatBtn').show();
+        $('#oprAddIdeaContainer').show();
         $('#oprSecAddIdeaBtn').hide();
 
+        $('#oprSecAddCatBtn').show();
+        $('#oprSecBrowseBtn').show();
+
         $('#oprAddCatContainer').hide();
+        $('#oprBrowseContainer').hide();
+        $('#oprEditCatContainer').hide();
+        $('#oprEditIdeaContainer').hide();
+    }
+    const browseData = () => {
+        $('#oprSecNaviTitle').text('الأفكار')
+        $('#oprBrowseContainer').show();
+
+        $('#oprSecAddCatBtn').show();
+        $('#oprSecAddIdeaBtn').show();
+        $('#oprSecBrowseBtn').hide();
+
+        $('#oprAddCatContainer').hide();
+        $('#oprAddIdeaContainer').hide();
         $('#oprEditCatContainer').hide();
         $('#oprEditIdeaContainer').hide();
     }
@@ -136,6 +167,9 @@ function NaviController(sectionKey, payLoad) {
             break;
         case 4:
 
+            break;
+        case 5:
+            browseData()
             break;
         default:
             console.error('requested section is unavailable.')

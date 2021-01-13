@@ -1,0 +1,131 @@
+/* Inline #6 | file:///F:/php%20temp/islamic%20102/index.php */
+
+#DataListReichCatName {
+    padding: 16px;
+    font-weight: bold;
+    font-size: large;
+}
+
+#DataList {
+    max-width: 600px;
+    margin: auto;
+}
+
+#DataListIdeaName {
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    background-color: #191919;
+    color: white;
+    border-radius: 4px 0px 0px 0px;
+    display: block;
+    flex: 4;
+}
+
+#DataListIdeaFooter {
+    padding: 8px;
+    border-radius: 0px 0px 4px 4px;
+    color: #00abff;
+    background-color: #191919;
+}
+
+#DataListIdeaBody {
+    padding: 4px 16px 16px 16px;
+    font-style: italic;
+}
+
+#DataListReichCatDes {
+    margin: 8px 0px 16px 0px;
+    padding: 16px;
+    background-color: #151515;
+}
+
+#DataListReichCategory {
+    background-color: #2e2d2d00;
+    border-radius: 15px;
+    margin: 16px;
+    border: 1px solid #313131;
+    box-shadow: 1px 1px 1px black;
+}
+
+#DataListIdea {
+    border-radius: 5px;
+    background-color: #151515;
+    width: 224px;
+    margin: 16px auto;
+}
+
+#DataListReichCatFooter {
+    min-height: 30px;
+}
+
+#DataListReichCatName {
+    text-align: center;
+}
+
+
+
+/* Inline #7 | file:///F:/php%20temp/islamic%20102/index.php */
+
+#DataListIdeaHead {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+}
+
+#DataListIdeaIndex {
+    flex: 1;
+    text-align: center;
+    background-color: #151515;
+    height: 100%;
+    padding: 8px;
+}
+
+#DataListIdeasList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#DataListIdeaHead {
+    background-color: #151515;
+}
+
+#DataListIdeaIndex {
+    border-radius: 0px 5px 0px 0px;
+}
+
+
+
+/* Inline #7 | file:///F:/php%20temp/islamic%20102/index.php */
+
+.reich-nested-category-name {
+    background-color: #1f1f1f;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.reich-nested-category-name::before {
+    /* content: ''; */
+    content: '-  ';
+}
+
+
+.nested-category-data-list {
+    margin: 8px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 8px;
+}
+
+.reich-cat-des {
+    background-color: #151515;
+    margin: 0px -8px;
+    padding: 8px;
+}
+
+.nested-category-data-list {
+    /* border: 1px solid gray; */
+    border: 1px solid #404040;
+    box-shadow: 1px 1px 1px black;
+}

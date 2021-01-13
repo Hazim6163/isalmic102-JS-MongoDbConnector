@@ -32,14 +32,18 @@ async function API_ALL_IDEAS() {
 
 // add new idea to the database : 
 async function ADD_NEW_IDEA(data) {
-    const idea = await addNewIdeaASYNC(data);
+    const idea = await addNewIdeaASYNC(data).then(() => {
+        isReichCategories = false;
+    });
     return idea
 }
 
 //delete idea request . 
 // async request : 
 async function DELETE_IDEA_API_BY_ID(data) {
-    const result = await DELETE_IDEA_API_BY_IDAsync(data);
+    const result = await DELETE_IDEA_API_BY_IDAsync(data).then(() => {
+        isReichCategories = false;
+    });
     //isIdeas = false;
     return result
 }
@@ -47,7 +51,9 @@ async function DELETE_IDEA_API_BY_ID(data) {
 //edit idea request: 
 // async request : 
 async function EDIT_IDEA_API(data) {
-    const result = await EDIT_IDEA_APIAsync(data);
+    const result = await EDIT_IDEA_APIAsync(data).then(() => {
+        isReichCategories = false;
+    });
     return result
 }
 

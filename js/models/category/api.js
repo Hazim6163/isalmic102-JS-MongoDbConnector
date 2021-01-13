@@ -1,6 +1,7 @@
 
 let isCategories = false;
-
+let isReichCategories = false;
+let reichCategories = [];
 /****
  ******** LISTENERS   *******
  */
@@ -19,6 +20,17 @@ setInterval(() => {
     isCategories = true;
 }, 500)
 
+//reich categories list changed : 
+setInterval(() => {
+    if (isReichCategories) return;
+    console.warn('listen to categories reich list changes on: isReichCategories = ' + false)
+    REICH_CATEGORIES_API().then((e) => {
+        reichCategories = e;
+        populateDataList('DataList', 'data-list');
+    });
+    isReichCategories = true;
+}, 500)
+
 
 /***
 ************ Operations ****************
@@ -32,14 +44,18 @@ async function API_ALL_CATEGORIES() {
 
 // add new category to the database : 
 async function ADD_NEW_CATEGORY(cat) {
-    const category = await addNewCategoryASYNC(cat);
+    const category = await addNewCategoryASYNC(cat).then(() => {
+        isReichCategories = false;
+    });
     return category
 }
 
 //delete category request . 
 // async request : 
 async function DELETE_CATEGORY_API_BY_ID(data) {
-    const result = await DELETE_CATEGORY_API_BY_IDAsync(data);
+    const result = await DELETE_CATEGORY_API_BY_IDAsync(data).then(() => {
+        isReichCategories = false;
+    });
     //isCategories = false;
     return result
 }
@@ -47,10 +63,18 @@ async function DELETE_CATEGORY_API_BY_ID(data) {
 //edit category request: 
 // async request : 
 async function EDIT_CATEGORY_API(data) {
-    const result = await EDIT_CATEGORY_APIAsync(data);
+    const result = await EDIT_CATEGORY_APIAsync(data).then(() => {
+        isReichCategories = false;
+    });
     return result
 }
 
+
+// async request : 
+async function REICH_CATEGORIES_API() {
+    const res = await REICH_CATEGORIES_APIAsync();
+    return res
+}
 
 
 
@@ -123,5 +147,20 @@ const EDIT_CATEGORY_APIAsync = (data) => {
         }
         //send ajax : 
         $.ajax({ method, contentType, url, data, success, dataType })
+    });
+}
+
+
+const REICH_CATEGORIES_APIAsync = () => {
+    return new Promise(resolve => {
+        const method = 'GET'; // HTTP Request Type
+        const url = urls.apiBase + urls.category.reich.path; // url
+        const contentType = 'application/json'; //content type
+        const dataType = 'JSON' //response Data
+        const success = (res) => {
+            resolve(res)
+        }
+        //send ajax : 
+        $.ajax({ method, contentType, url, success, dataType })
     });
 }

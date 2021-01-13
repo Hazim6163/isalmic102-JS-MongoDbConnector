@@ -15,6 +15,7 @@ const urls = {
         all: { path: '/category/api/all', method: 'get' },
         delete: { path: '/category/api/delete', method: 'get' },
         id: { path: '/category/api/id', method: 'get' },
+        reich: { path: '/category/api/reich', method: 'get' }
     },
     idea: {
         add: { path: '/idea/api/add', method: 'POST' },

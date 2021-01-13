@@ -215,7 +215,7 @@ function inflateEditCategory(data) {
         text: data.name
     }))
     //check if the category has description: 
-    if (data.description.length > 0) {
+    if (data.description && data.description.length > 0) {
         //create category description : 
         catBody.append($('<div>', {
             class: classPre + 'cat-description',

@@ -32,6 +32,7 @@
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/idea.css">
+    <link rel="stylesheet" href="./css/dataList.css">
 
     <title>Islamic 101</title>
 </head>
@@ -52,6 +53,7 @@
     <script src="./js/models/category/api.js"></script>
     <script src="./js/models/idea/api.js"></script>
     <script src="./js/sections/operationSection/inflater.js"></script>
+    <script src="./js/sections/dataList/inflate.js"></script>
     <script src="./js/sections/operationSection/addCategory/inflate.js"></script>
     <script src="./js/sections/operationSection/addIdea/inflate.js"></script>
     <script src="./js/sections/operationSection/editCategory/inflate.js"></script>

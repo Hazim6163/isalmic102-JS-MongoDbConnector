@@ -150,6 +150,32 @@ function inflateIdeaDataList(data, idPre, classPre, index) {
         id: idPre + 'IdeaSrc',
         text: data.source
     }).appendTo(footer)
+    //ideaAction
+    const ideaAction = $('<div>', {
+        class: classPre + 'ideaAction',
+        id: idPre + 'IdeaAction',
+    }).appendTo(footer)
+    ideaAction.append(
+        $('<div>', { class: classPre + 'cat-actions' }).append(
+            $('<div>', {
+                class: classPre + 'cat-actions-delete',
+                html: '<i class="fas fa-minus-square cat-action-delete-icon"></i>',
+                id: idPre + 'IconContainer'
+            }).click(() => {
+                //send delete request . 
+                DELETE_IDEA_API_BY_ID(data._id);
+            })
+        ).append(
+            $('<div>', {
+                class: classPre + 'cat-actions-edit',
+                html: '<i class="fas fa-pen-square cat-action-edit-icon"></i>',
+                id: idPre + 'CatActionEdit' + data._id
+            }).click(() => {
+                //navigate to the update category section : 
+                NaviController(3, data)
+            })
+        )//you can append another action right here 
+    )
     //ideaParent
     const parent = $('<div>', {
         class: classPre + 'ideaParent',

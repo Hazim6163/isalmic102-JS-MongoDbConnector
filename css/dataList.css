@@ -25,7 +25,7 @@
 #DataListIdeaFooter {
     padding: 8px;
     border-radius: 0px 0px 4px 4px;
-    color: #00abff;
+    color: #6a6c53;
     background-color: #191919;
 }
 
@@ -128,4 +128,14 @@
     /* border: 1px solid gray; */
     border: 1px solid #404040;
     box-shadow: 1px 1px 1px black;
+}
+
+
+
+/* Inline #7 | file:///F:/php%20temp/islamic%20102/index.php */
+
+.data-listcat-actions {
+    display: flex;
+    margin-top: 4px;
+    justify-content: center;
 }

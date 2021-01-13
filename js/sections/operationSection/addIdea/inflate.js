@@ -37,6 +37,13 @@
 
 let source = '';
 
+/**
+ * interval to set the description place holder
+ */
+setInterval(() => {
+    if ($('#ideaAddFormDes').text().length <= 1) $('#ideaAddFormDes').text('الوصف')
+}, 10000);
+
 $(document).ready(() => {
     //get add Idea container: 
     const section = $('#oprAddIdeaContainer');
@@ -69,7 +76,9 @@ function createAddIdeaForm(section, classPre, idPre) {
     }).attr({
         'type': 'text',
         'contenteditable': ''
-    }).text('الوصف'))
+    }).text('الوصف')).click(() => {
+        if ($('#' + idPre + 'Des').text() == 'الوصف') $('#' + idPre + 'Des').html('<br>')
+    })
     // source input
     form.append($('<input>', {
         class: 'addIdeaSrc input',
@@ -120,4 +129,8 @@ function handleSaveAddIdeaClick(idPre) {
     d = JSON.stringify(d);
 
     ADD_NEW_IDEA(d);
+
+    //clean form: 
+    $('#' + idPre + 'Name').val('')
+    $('#' + idPre + 'Des').text('')
 }

@@ -21,6 +21,14 @@
  * 
  */
 
+/**
+ * interval to set the description place holder
+ */
+setInterval(() => {
+    console.log('inter')
+    if ($('#ideaEditFormDes').text().length <= 1) $('#ideaEditFormDes').text('الوصف')
+}, 10000);
+
 $(document).ready(() => {
     //get add Idea container: 
     const section = $('#oprEditIdeaContainer');

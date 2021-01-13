@@ -113,7 +113,7 @@ function NaviController(sectionKey, payLoad) {
         $('#oprSecBrowseBtn').show();
         $('#oprAddIdeaContainer').hide();
         $('#oprEditCatContainer').hide();
-        $('#oprBrowseContainer').hide();
+        $('#oprBrowseContainer').show();
         $('#oprEditIdeaContainer').hide();
     }
     const editCategory = () => {
@@ -126,7 +126,7 @@ function NaviController(sectionKey, payLoad) {
         $('#oprSecBrowseBtn').show();
         $('#oprAddIdeaContainer').hide();
         $('#oprAddCatContainer').hide();
-        $('#oprBrowseContainer').hide();
+        $('#oprBrowseContainer').show();
         $('#oprEditIdeaContainer').hide();
     }
     const addIdea = () => {
@@ -139,7 +139,7 @@ function NaviController(sectionKey, payLoad) {
         $('#oprSecBrowseBtn').show();
 
         $('#oprAddCatContainer').hide();
-        $('#oprBrowseContainer').hide();
+        $('#oprBrowseContainer').show();
         $('#oprEditCatContainer').hide();
         $('#oprEditIdeaContainer').hide();
     }
@@ -166,7 +166,7 @@ function NaviController(sectionKey, payLoad) {
         $('#oprSecBrowseBtn').show();
         $('#oprAddIdeaContainer').hide();
         $('#oprAddCatContainer').hide();
-        $('#oprBrowseContainer').hide();
+        $('#oprBrowseContainer').show();
         $('#oprEditCatContainer').hide();
     }
     switch (sectionKey) {

@@ -1,7 +1,7 @@
 //TODO change
 const urls = {
-    //apiBase: 'https://islamic-server-101.herokuapp.com',
-    apiBase: 'http://localhost:3000',
+    apiBase: 'https://islamic-server-101.herokuapp.com',
+    //apiBase: 'http://localhost:3000',
     user: {
         register: { path: '/user/api/register', method: 'POST' },
         login: { path: '/user/api/login', method: 'POST' },

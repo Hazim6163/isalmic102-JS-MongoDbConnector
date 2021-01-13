@@ -34,6 +34,9 @@ function populateDataList(idPre, classPre) {
     // print each child category if was : 
     // print each child category ideas if was
     // print each idea 
+    if (!reichCategories.length > 0) { 
+        list.text('there is no categories') 
+        return; }
     reichCategories.forEach((category) => {
         //create Category container: 
         createReichCat(category, idPre, classPre, list);
